@@ -7,17 +7,19 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    dbData: {}
   },
 
   onLoad: function() {
+
+    // this.showBusy()
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',
       })
       return
     }
-
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -64,6 +66,29 @@ Page({
           url: '../deployFunctions/deployFunctions',
         })
       }
+    })
+  },
+
+  showBusy: function () {
+    console.log('loading.....');
+    wx.showLoading({
+      title: '加载中',
+      // icon: 'loading',
+      // duration: 90000,
+      mask: true
+    })
+  },
+
+  showDatabase: function () {
+    console.log('show');
+    wx.cloud.callFunction({
+      name: 'db',
+      data: {
+        a: 12,
+        b: 11
+      }
+    }).then((data) => {
+      console.log(data);
     })
   },
 

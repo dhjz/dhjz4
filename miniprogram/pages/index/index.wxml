@@ -40,4 +40,9 @@
     </navigator>
   </view>
 
+  <!-- 测试云函数 -->
+  <view class="uploader"> 
+    <text class="uploader-text" bind:tap="showDatabase">快速新建云函数</text>
+  </view>
+
 </view>
