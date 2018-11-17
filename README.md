@@ -10,3 +10,29 @@
 
 - [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
 
+## git
+### Git全局设置
+```shell
+git config --global user.name  "dhjz"
+git config --global user.email "21f_909514844_dhjz@git.cloud.tencent.com"
+```
+
+### 创建一个新的版本库
+```shell
+git clone https://git.qcloud.com/21f_909514844/dhjz.git
+cd dhjz
+touch README.md
+git add README.md
+git commit -m "add README"
+git push -u origin master
+```
+
+### 现有的文件夹或Git版本库
+```shell
+cd existing_folder
+git init
+git remote add origin https://git.qcloud.com/21f_909514844/dhjz.git
+git add .
+git commit
+git push -u origin master
+```
